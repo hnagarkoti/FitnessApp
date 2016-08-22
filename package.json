@@ -6,7 +6,14 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "querystring": "^0.2.0",
     "react": "15.2.1",
-    "react-native": "^0.31.0"
+    "react-native": "^0.31.0",
+    "react-native-material-design": "github:teampumpkin/react-native-material-design#77f53d5d6cf1fca1143cb9ff9e12393ac5fe4400",
+    "react-native-material-design-styles": "^0.2.6",
+    "react-native-router-redux": "^0.2.2",
+    "react-native-vector-icons": "^2.0.3",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2"
   }
 }

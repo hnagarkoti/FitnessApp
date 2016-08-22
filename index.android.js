@@ -1,53 +1,59 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
- * @flow
  */
 
 import React, { Component } from 'react';
+import Routes from './components/routes.js';
+
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
-  View
 } from 'react-native';
 
+import { Provider } from 'react-redux';
+import { reducer as router } from './components/core/RouterLibrary';
+import { drawer } from './libs/reducer.js';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+
+
+const reducer = combineReducers({
+  router: router,
+  // drawer: drawer,
+});
+
+let jsonReplacer = (k, v ) =>{
+  if( v && v.type == 'ROUTER_CHANGE_TAB' ){
+    return 'ROUTER_CHANGE_TAB Event not logged';
+  }
+  return v;
+}
+
+const logger = store => next => action => {
+  console.log('dispatching', action.type  );
+  let result = next(action)
+  console.log('next state', store.getState() )
+  return result
+}
+
+const store = createStore(reducer, applyMiddleware( logger ));
+
 class FitnessApp extends Component {
+
+  componentDidMount() {
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
+      <Provider store={store}>
+        <Routes />
+      </Provider>
+      );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+
+
 
 AppRegistry.registerComponent('FitnessApp', () => FitnessApp);
+
+
