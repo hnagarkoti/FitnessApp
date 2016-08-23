@@ -63,7 +63,7 @@ let defaultSchema = {
 };
 
 import HomeContent from './scenes/HomeContent';
-import Profile from './scenes/User/ProfileContent';
+// import Profile from './scenes/User/ProfileContent';
 // import LoginView from './scenes/LoginView';
 // import About from './scenes/About/About.js';
 // import Password from './scenes/User/Password';
@@ -81,7 +81,7 @@ import Profile from './scenes/User/ProfileContent';
 // import Preview from './scenes/Preview';
 // import Setting from './scenes/Settings';
 // import ProfilePreview from './scenes/User/ProfilePreview';
-// import Help from './scenes/Help';
+import Help from './scenes/Help';
 // import PDFViewer from './scenes/PDFViewer';
 // // import Password from './scenes/User/Password';
 // import SplashPage from './scenes/SplashPage';
@@ -193,7 +193,7 @@ class AApplication extends Component{
         <Router initial="Welcome" {...this.props} ref="router" >
           <Schema name="default" {...defaultSchema} />
           <Route name="Welcome" hideNavBar={true} component={HomeContent} title="" sidebar={sidebar} />
-          
+          <Route name="Help" component={Help} title="Help" sidebar={sidebar} />
     
 
         </Router>

@@ -196,7 +196,7 @@ export default class Sidebar extends Component {
             }
           </TouchableHighlight>
           <View style={[cs.header,{flexDirection: 'row',alignItems: 'center',justifyContent: 'space-between',paddingHorizontal: 16}]}>
-            <Text style={[styles.textOfWelcomeDrawer, COLOR.googleRed700, TYPO.paperFontTitle,]}>{mApi.user.name}</Text>
+            <Text style={[styles.textOfWelcomeDrawer, COLOR.googleRed700, TYPO.paperFontTitle,]}>Hemant Nagarkoti</Text>
           </View>
         </Drawer.Header>
 
@@ -212,38 +212,38 @@ export default class Sidebar extends Component {
             {
               icon: 'person',
               value: 'Profile',
-              onPress: () => { this.goto('profile') },
-              onLongPress: () => this.goto('profile')
+              onPress: () => { this.goto('Welcome') },
+              onLongPress: () => this.goto('Welcome')
             },
             {
               icon: 'photo-library',
               value: 'Favourites',
               label: '8',
-              onPress: () => { this.goto('favourite') },
-              onLongPress: () => this.goto('favourite')
+              onPress: () => { this.goto('Welcome') },
+              onLongPress: () => this.goto('Welcome')
             },
 
             {
               icon: 'notifications',
               value: 'Alerts',
               label: '8',
-              onPress: () => { this.goto('alert') },
-              onLongPress: () => this.goto('alert')
+              onPress: () => { this.goto('Welcome') },
+              onLongPress: () => this.goto('Welcome')
             },
             {
               icon: 'settings',
               value: 'Settings',
               label: '8',
-              onPress: () => { this.goto('Setting') },
-              onLongPress: () => this.goto('Setting')
+              onPress: () => { this.goto('Welcome') },
+              onLongPress: () => this.goto('Welcome')
             },
             
             {
               icon: 'help',
               value: 'Help',
               label: '8',
-              onPress: () => { this.goto('help') },
-              onLongPress: () => this.goto('help')
+              onPress: () => { this.goto('Welcome') },
+              onLongPress: () => this.goto('Welcome')
             }]}
           />
           <Divider style={{ marginTop: 15 }} />
