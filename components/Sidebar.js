@@ -246,6 +246,13 @@ export default class Sidebar extends Component {
             },
             {
               icon: 'settings',
+              value: 'Friends',
+              label: '8',
+              onPress: () => { this.goto('Friends') },
+              onLongPress: () => this.goto('Friends')
+            },
+            {
+              icon: 'settings',
               value: 'Blog',
               label: '8',
               onPress: () => { this.goto('Blog') },

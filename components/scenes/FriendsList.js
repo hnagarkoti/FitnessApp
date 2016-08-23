@@ -13,15 +13,10 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import TabBar from '../core/TabBar';
 import { goto, goBack } from '../../libs/routerUtils';
 import { ProfileTabBar, HomePageTabBar } from './tabIcons';
-import ScrollableTabView from 'react-native-scrollable-tab-view';
-import Dashboard from './Dashboard';
-import ActiveChallenges from './ActiveChallenges';
-import FriendsList from './FriendsList';
 
 
 
-
-class Friends extends React.Component {
+class FriendsList extends React.Component {
 
   static contextTypes = {
     openDrawer: React.PropTypes.func,
@@ -30,11 +25,12 @@ class Friends extends React.Component {
 
   render() {
     return (
-      <ScrollableTabView>
-        <FriendsList tabLabel="FriendsList" />
-        <Dashboard tabLabel="Dashboard" />
-        <ActiveChallenges tabLabel="ActiveChallenges" />
-      </ScrollableTabView>
+      <View style={ styles.container }>
+        <NavBar navTitle="HOME" navLeft={ <Icon name="menu" size={ 30 } color="#fff" onPress={ this.context.openDrawer } /> } />
+          <View>
+            <Text>Blog Page</Text>
+          </View>
+      </View>
       );
   }
 
@@ -49,4 +45,4 @@ class Friends extends React.Component {
 }
 
 
-module.exports = Friends;
+module.exports = FriendsList;

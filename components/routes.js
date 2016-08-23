@@ -90,6 +90,8 @@ import Powerup from './scenes/Powerup';
 import Help from './scenes/Help';
 import Blog from './scenes/Blog';
 import Friends from './scenes/Friends';
+import FriendsList from './scenes/FriendsList';
+
 
 class AApplication extends Component{
 
@@ -204,6 +206,8 @@ class AApplication extends Component{
           <Route name="Powerup" component={Powerup} title="Powerup" sidebar={sidebar} />
           <Route name="Blog" component={Blog} title="Blog" sidebar={sidebar} />
           <Route name="Friends" component={Friends} title="Friends" sidebar={sidebar} />
+          <Route name="FriendsList" component={FriendsList} title="FriendsList" sidebar={sidebar} />
+
 
     
         </Router>
