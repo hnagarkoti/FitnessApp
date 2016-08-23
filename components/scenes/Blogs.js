@@ -8,7 +8,8 @@ var {
   View,
   Image,
   Dimensions,
-  ScrollView
+  ScrollView,
+  TouchableHighlight
 } = require('react-native');
 
 // import { Card, Button, Avatar, Drawer, Divider, Subheader, COLOR, TYPO } from 'react-native-material-design';
@@ -93,18 +94,22 @@ var Blogs = React.createClass({
     return {width: size, height: size}
   },
 
+  goToBlogPage(blog){
+    console.log('goToBlogPage',blog.id);
+  },
+
   renderRow(images) {
     return images.map((uri) => {
       return (
-        <Image style={[styles.image, this.calculatedSize()]} source={{uri: uri.image}} >
-
-        <Text style={styles.mainText}>
-        {uri.text}
-        </Text>
-
-        
-
-        </Image>
+        <View>
+        <TouchableHighlight onPress={this.goToBlogPage(this)}>
+          <Image style={[styles.image, this.calculatedSize()]} source={{uri: uri.image}} >
+            <Text style={styles.mainText}>
+            {uri.text}
+            </Text>
+          </Image>
+        </TouchableHighlight>
+        </View>
       )
     })
   },
