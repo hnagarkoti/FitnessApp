@@ -9,10 +9,10 @@ import styles from './scenes/styles';
 // import Alert from './scenes/Alert';
 // import { logout } from '../libs/session';
 // import Icon from 'react-native-vector-icons/MaterialIcons';
-import Icon from 'react-native-vector-icons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import { mApi } from '../libs/Api';
 var window = Dimensions.get('window');
-
+var imgURL = 'http://pickaface.net/includes/themes/clean/img/slide2.png';
 let iconClr = '#ED1C26';
 
 const cs = StyleSheet.create({
@@ -22,7 +22,7 @@ const cs = StyleSheet.create({
      right:25,
      top:25,
      backgroundColor:'#ffffffb1',
-     width:260,
+     width:300,
      padding:14,
       borderWidth: 5, 
       borderBottomColor: '#ED1C26',
@@ -96,12 +96,12 @@ class Section extends Component {
   }
 
   render(){
+    console.log('this.props.items for section :---- ', this.props.items);
     return (
       <View style={{ flex: .7}}>
-      <View style={ [cs.sectionContainer] }>
-        { this.props.items.map((v, i) => this.renderItem(v, i)) }
-      </View>
-      
+        <View style={ [cs.sectionContainer] }>
+          { this.props.items.map((v, i) => this.renderItem(v, i)) }
+        </View>
       </View>
     );
   }
@@ -143,7 +143,8 @@ export default class Sidebar extends Component {
   constructor(){
     super();
     this.state = {
-      profilePicture: mApi.user && mApi.user.profilePicture
+      // profilePicture: mApi.user && mApi.user.profilePicture
+      profilePicture: imgURL
     };
   }
 
@@ -154,7 +155,7 @@ export default class Sidebar extends Component {
   }
 
   favourite() {
-    goto(this.context.store, 'favourite');
+    // goto(this.context.store, 'favourite');
   }
   goto(page) {
     this.context.closeDrawer();
@@ -163,7 +164,8 @@ export default class Sidebar extends Component {
 
   handleProfilePicChange(){
     this.setState({
-      profilePicture: mApi.user.profilePicture
+      // profilePicture: mApi.user.profilePicture
+      profilePicture: imgURL
     });
   }
 
@@ -189,11 +191,8 @@ export default class Sidebar extends Component {
           <TouchableHighlight
             onPress={() => { this.goto('profile') } }
             underlayColor="#99d9f4">
-            {
-            this.state.profilePicture ?
-            <Image style={{marginTop: 5, height: 70, width: 70, borderRadius: 35}} source={{ uri: this.state.profilePicture }}/> :
             <Image style={{marginTop: 5, height: 70, width: 70, borderRadius: 35}} source={require('../assests/images/ic.png')}/>
-            }
+            
           </TouchableHighlight>
           <View style={[cs.header,{flexDirection: 'row',alignItems: 'center',justifyContent: 'space-between',paddingHorizontal: 16}]}>
             <Text style={[styles.textOfWelcomeDrawer, COLOR.googleRed700, TYPO.paperFontTitle,]}>Hemant Nagarkoti</Text>
@@ -253,8 +252,8 @@ export default class Sidebar extends Component {
                         icon: 'exit-to-app',
                         value: 'Logout',
                         label: '8',
-                        onPress: () => this.logout('loginView'),
-                        onLongPress: () => this.logout('loginView')
+                        onPress: () => this.goto('Welcome'),
+                        onLongPress: () => this.goto('Welcome')
                     }]}
           />
          
@@ -270,10 +269,3 @@ Sidebar.contextTypes = {
   closeDrawer: React.PropTypes.func,
 };
 
-// {
-//               icon: 'info',
-//               value: 'About',
-//               label: '8',
-//               onPress: () => { this.goto('aboutus') },
-//               onLongPress: () => this.goto('aboutus')
-//             },
