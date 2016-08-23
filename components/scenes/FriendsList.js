@@ -14,6 +14,26 @@ import TabBar from '../core/TabBar';
 import { goto, goBack } from '../../libs/routerUtils';
 import { ProfileTabBar, HomePageTabBar } from './tabIcons';
 
+var DATA = [{
+  'id': 1,
+  'name': 'Snehal',
+  'image': 'https://pixabay.com/static/uploads/photo/2010/12/22/10/48/doll-3925_960_720.jpg'
+},
+  {
+    'id': 2,
+    'name': 'preethi',
+    'image': 'http://hdimagesnew.com/wp-content/uploads/2015/11/cute-dolls-pics-9.jpg'
+  },
+  {
+    'id': 3,
+    'name': 'Hitha',
+    'image': 'https://s-media-cache-ak0.pinimg.com/564x/42/2c/cd/422ccd63bc4dffa943da8340bdddda7b.jpg'
+  },
+  {
+    'id': 4,
+    'name': 'vinay',
+    'image': 'http://hdimagesnew.com/wp-content/uploads/2015/11/1446565203_Purple-flower-Wallpapers-1.jpg'
+  }];
 
 
 class FriendsList extends React.Component {
@@ -22,14 +42,30 @@ class FriendsList extends React.Component {
     openDrawer: React.PropTypes.func,
     store: React.PropTypes.object.isRequired,
   };
-
+ constructor() {
+    super();
+    this.state = {
+      friendsData: null,
+      loaded: false
+    };
+  }
+  componentDidMount() {
+    this.setState({
+      friendsData: DATA,
+      loaded: true
+    });
+  }
   render() {
+     if (!this.state.loaded) {
+      return this.renderLoadingView();
+    }
     return (
       <View style={ styles.container }>
-        <NavBar navTitle="HOME" navLeft={ <Icon name="menu" size={ 30 } color="#fff" onPress={ this.context.openDrawer } /> } />
-          <View>
-            <Text>Blog Page</Text>
-          </View>
+       {this.state.friendsData.map((friends)=>(
+            <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }} >
+          <Text style={{ alignSelf: 'center' }}> {friends.name}</Text>
+        </View>
+        ))}
       </View>
       );
   }
@@ -37,7 +73,7 @@ class FriendsList extends React.Component {
   renderLoadingView() {
     return (
       <View style={ { flexDirection: 'row', flex: 1, justifyContent: 'center', alignItems: 'center' } }>
-        <Spinner style={{alignSelf: 'auto'}} visible={ !this.state.visible } />
+         <Text> Loading friends...</Text>
       </View>
       );
   }
