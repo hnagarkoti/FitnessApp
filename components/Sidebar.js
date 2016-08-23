@@ -22,7 +22,7 @@ const cs = StyleSheet.create({
      right:25,
      top:25,
      backgroundColor:'#ffffffb1',
-     width:300,
+     width:260,
      padding:14,
       borderWidth: 5, 
       borderBottomColor: '#ED1C26',
