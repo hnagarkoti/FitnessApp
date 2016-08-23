@@ -17,8 +17,8 @@ import {
 import { connect } from 'react-redux';
 import { goto, goBack } from '../libs/routerUtils';
 import { bindActionCreators } from 'redux';
-// import Icon from 'react-native-vector-icons/MaterialIcons';
-import Icon from 'react-native-vector-icons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+// import Icon from 'react-native-vector-icons';
 import { mApi } from '../libs/Api';
 
 import {
@@ -81,13 +81,14 @@ import HomeContent from './scenes/HomeContent';
 // import Preview from './scenes/Preview';
 // import Setting from './scenes/Settings';
 // import ProfilePreview from './scenes/User/ProfilePreview';
+import Dashboard from './scenes/Dashboard';
+import ActiveChallenges from './scenes/ActiveChallenges';
+import GuidedSession from './scenes/GuidedSession';
+import Leaderboard from './scenes/Leaderboard';
+import ChallengeHistory from './scenes/ChallengeHistory';
+import Powerup from './scenes/Powerup';
 import Help from './scenes/Help';
-// import PDFViewer from './scenes/PDFViewer';
-// // import Password from './scenes/User/Password';
-// import SplashPage from './scenes/SplashPage';
-// import PdfGridView from './scenes/PdfGridView';
-// import PagerView from './scenes/PagerView';
-// import PreviewForZomming from './scenes/PreviewForZomming';
+import Blog from './scenes/Blog';
 
 class AApplication extends Component{
 
@@ -194,8 +195,14 @@ class AApplication extends Component{
           <Schema name="default" {...defaultSchema} />
           <Route name="Welcome" hideNavBar={true} component={HomeContent} title="" sidebar={sidebar} />
           <Route name="Help" component={Help} title="Help" sidebar={sidebar} />
+          <Route name="Dashboard" component={Dashboard} title="Dashboard" sidebar={sidebar} />
+          <Route name="ActiveChallenges" component={ActiveChallenges} title="ActiveChallenges" sidebar={sidebar} />
+          <Route name="GuidedSession" component={GuidedSession} title="GuidedSession" sidebar={sidebar} />
+          <Route name="Leaderboard" component={Leaderboard} title="Leaderboard" sidebar={sidebar} />
+          <Route name="ChallengeHistory" component={ChallengeHistory} title="ChallengeHistory" sidebar={sidebar} />
+          <Route name="Powerup" component={Powerup} title="Powerup" sidebar={sidebar} />
+          <Route name="Blog" component={Blog} title="Blog" sidebar={sidebar} />
     
-
         </Router>
     );
   }

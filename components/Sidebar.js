@@ -5,7 +5,7 @@ import styles from './scenes/styles';
 // import About from './scenes/About/About.js';
 // // import Profile from './scenes/User/ProfileContent';
 // import LoginView from './scenes/LoginView';
-// import { goto, goBack, reset } from '../libs/routerUtils';
+import { goto, goBack, reset } from '../libs/routerUtils';
 // import Alert from './scenes/Alert';
 // import { logout } from '../libs/session';
 // import Icon from 'react-native-vector-icons/MaterialIcons';
