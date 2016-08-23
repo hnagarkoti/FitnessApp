@@ -15,6 +15,7 @@
     "react-native-router-redux": "github:teampumpkin/react-native-router-redux#013d2e2d1db6ae650c4b6c3c76e948c77451113c",
     "react-native-vector-icons": "^2.0.3",
     "react-redux": "^4.4.5",
-    "redux": "^3.5.2"
+    "redux": "^3.5.2",
+    "lodash": "^4.12.0"
   }
 }
