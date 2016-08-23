@@ -9,13 +9,10 @@ import Link from '../core/Link';
 import ButtonLink from '../core/ButtonLink';
 import styles from './styles';
 import NavBar from '../core/NavBar';
-// import Icon from 'react-native-vector-icons/MaterialIcons';
-import Icon from 'react-native-vector-icons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import TabBar from '../core/TabBar';
 import { goto, goBack } from '../../libs/routerUtils';
 import { ProfileTabBar, HomePageTabBar } from './tabIcons';
-
-
 
 
 
@@ -29,10 +26,9 @@ class HomeContent extends React.Component {
   render() {
     return (
       <View style={ styles.container }>
+        <NavBar navTitle="HOME" navLeft={ <Icon name="menu" size={ 30 } color="#fff" onPress={ this.context.openDrawer } /> } />
           <View>
-            <Text>
-              Hello
-            </Text>
+            <Text>Home Page</Text>
           </View>
       </View>
       );
@@ -45,7 +41,6 @@ class HomeContent extends React.Component {
       </View>
       );
   }
-
 
 }
 
