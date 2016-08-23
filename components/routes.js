@@ -63,6 +63,7 @@ let defaultSchema = {
 };
 
 import HomeContent from './scenes/HomeContent';
+import Blogs from './scenes/Blogs';
 // import Profile from './scenes/User/ProfileContent';
 // import LoginView from './scenes/LoginView';
 // import About from './scenes/About/About.js';
@@ -194,7 +195,7 @@ class AApplication extends Component{
     defaultSchema.navLeft = menuIcon;
     let sidebar = ()=> <Sidebar/>;
     return(
-        <Router initial="Welcome" {...this.props} ref="router" >
+        <Router initial="Blogs" {...this.props} ref="router" >
           <Schema name="default" {...defaultSchema} />
           <Route name="Welcome" hideNavBar={true} component={HomeContent} title="" sidebar={sidebar} />
           <Route name="Help" component={Help} title="Help" sidebar={sidebar} />
@@ -207,9 +208,7 @@ class AApplication extends Component{
           <Route name="Blog" component={Blog} title="Blog" sidebar={sidebar} />
           <Route name="Friends" component={Friends} title="Friends" sidebar={sidebar} />
           <Route name="FriendsList" component={FriendsList} title="FriendsList" sidebar={sidebar} />
-
-
-    
+          <Route name="Blogs" component={Blogs} title="Blogs" sidebar={sidebar} />
         </Router>
     );
   }
