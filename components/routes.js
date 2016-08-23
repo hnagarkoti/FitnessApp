@@ -89,6 +89,7 @@ import ChallengeHistory from './scenes/ChallengeHistory';
 import Powerup from './scenes/Powerup';
 import Help from './scenes/Help';
 import Blog from './scenes/Blog';
+import Friends from './scenes/Friends';
 
 class AApplication extends Component{
 
@@ -202,6 +203,8 @@ class AApplication extends Component{
           <Route name="ChallengeHistory" component={ChallengeHistory} title="ChallengeHistory" sidebar={sidebar} />
           <Route name="Powerup" component={Powerup} title="Powerup" sidebar={sidebar} />
           <Route name="Blog" component={Blog} title="Blog" sidebar={sidebar} />
+          <Route name="Friends" component={Friends} title="Friends" sidebar={sidebar} />
+
     
         </Router>
     );

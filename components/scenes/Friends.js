@@ -16,7 +16,7 @@ import { ProfileTabBar, HomePageTabBar } from './tabIcons';
 
 
 
-class ActiveChallenges extends React.Component {
+class Friends extends React.Component {
 
   static contextTypes = {
     openDrawer: React.PropTypes.func,
@@ -28,7 +28,7 @@ class ActiveChallenges extends React.Component {
       <View style={ styles.container }>
         <NavBar navTitle="HOME" navLeft={ <Icon name="menu" size={ 30 } color="#fff" onPress={ this.context.openDrawer } /> } />
           <View>
-            <Text>Active Page</Text>
+            <Text>Friends Page</Text>
           </View>
       </View>
       );
@@ -45,4 +45,4 @@ class ActiveChallenges extends React.Component {
 }
 
 
-module.exports = ActiveChallenges;
+module.exports = Friends;

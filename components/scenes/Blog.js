@@ -16,7 +16,7 @@ import { ProfileTabBar, HomePageTabBar } from './tabIcons';
 
 
 
-class HomeContent extends React.Component {
+class Blog extends React.Component {
 
   static contextTypes = {
     openDrawer: React.PropTypes.func,
@@ -45,4 +45,4 @@ class HomeContent extends React.Component {
 }
 
 
-module.exports = HomeContent;
+module.exports = Blog;
