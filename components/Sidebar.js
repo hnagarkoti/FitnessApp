@@ -181,8 +181,8 @@ export default class Sidebar extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
-      <Drawer theme='light' >
+      <View style={{ flex: 1}}>
+      <Drawer theme='light'>
           
   
         <Drawer.Header
@@ -195,57 +195,65 @@ export default class Sidebar extends Component {
             
           </TouchableHighlight>
           <View style={[cs.header,{flexDirection: 'row',alignItems: 'center',justifyContent: 'space-between',paddingHorizontal: 16}]}>
-            <Text style={[styles.textOfWelcomeDrawer, COLOR.googleRed700, TYPO.paperFontTitle,]}>Hemant Nagarkoti</Text>
+            <Text style={[styles.textOfWelcomeDrawer, COLOR.googleRed700, TYPO.paperFontTitle,]}>Hemant </Text>
           </View>
         </Drawer.Header>
 
         <Section
           items={[
             {
-              icon: 'home',
-              value: 'Home',
-              onPress: () => { this.goto('Welcome') },
-              onLongPress: () => this.goto('Welcome')
+              icon: '',
+              value: 'Dashboard',
+              onPress: () => { this.goto('Dashboard') },
+              onLongPress: () => this.goto('Dashboard')
             },
 
             {
               icon: 'person',
-              value: 'Profile',
-              onPress: () => { this.goto('Welcome') },
-              onLongPress: () => this.goto('Welcome')
+              value: 'Active Challenges',
+              onPress: () => { this.goto('ActiveChallenges') },
+              onLongPress: () => this.goto('ActiveChallenges')
             },
             {
               icon: 'photo-library',
-              value: 'Favourites',
+              value: 'Guided Session',
               label: '8',
-              onPress: () => { this.goto('Welcome') },
-              onLongPress: () => this.goto('Welcome')
+              onPress: () => { this.goto('GuidedSession') },
+              onLongPress: () => this.goto('GuidedSession')
             },
 
             {
               icon: 'notifications',
-              value: 'Alerts',
+              value: 'Leaderboard',
               label: '8',
-              onPress: () => { this.goto('Welcome') },
-              onLongPress: () => this.goto('Welcome')
+              onPress: () => { this.goto('Leaderboard') },
+              onLongPress: () => this.goto('Leaderboard')
             },
             {
               icon: 'settings',
-              value: 'Settings',
+              value: 'Challenge History',
               label: '8',
-              onPress: () => { this.goto('Welcome') },
-              onLongPress: () => this.goto('Welcome')
+              onPress: () => { this.goto('ChallengeHistory') },
+              onLongPress: () => this.goto('ChallengeHistory')
             },
             
             {
               icon: 'help',
-              value: 'Help',
+              value: 'Power Up',
               label: '8',
-              onPress: () => { this.goto('Welcome') },
-              onLongPress: () => this.goto('Welcome')
-            }]}
+              onPress: () => { this.goto('Powerup') },
+              onLongPress: () => this.goto('Powerup')
+            },
+            {
+              icon: 'settings',
+              value: 'Blog',
+              label: '8',
+              onPress: () => { this.goto('Blog') },
+              onLongPress: () => this.goto('Blog')
+            }
+            ]}
           />
-          <Divider style={{ marginTop: 15 }} />
+          <Divider style={{ marginTop: 200 }} />
           
           <BottomSection
             items={[{
@@ -262,7 +270,11 @@ export default class Sidebar extends Component {
         );
     }
 }
-
+var styles1 = StyleSheet.create({
+  drawer:{
+    width:200
+  },
+});
 Sidebar.contextTypes = {
   store: React.PropTypes.object.isRequired,
   openDrawer: React.PropTypes.func,
