@@ -139,6 +139,11 @@ var Blogs = React.createClass({
   }
 });
 
+Blogs.contextTypes = {
+  openDrawer: React.PropTypes.func,
+  store: React.PropTypes.object.isRequired,
+};
+
 var styles = StyleSheet.create({
   row: {
     flexDirection: 'row',

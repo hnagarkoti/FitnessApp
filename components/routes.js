@@ -31,18 +31,14 @@ import {
 
 import Sidebar from './Sidebar';
 
-
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators( { ...routerActions }, dispatch),
   dispatch,
 });
-
 const mapStateToProps = state => ({
   router: state.router,
   // drawer: state.drawer,
 });
-
-
 
 let defaultSchema = {
   navBar: NavBar,
@@ -72,7 +68,12 @@ import Help from './scenes/Help';
 import Blog from './scenes/Blog';
 import Friends from './scenes/Friends';
 import FriendsList from './scenes/FriendsList';
+<<<<<<< Updated upstream
 import RankedFriends from './scenes/RankedFriends';
+=======
+import BeFitSuggestion from './scenes/BeFitSuggestion';
+
+>>>>>>> Stashed changes
 
 class AApplication extends Component{
 
@@ -175,7 +176,7 @@ class AApplication extends Component{
     defaultSchema.navLeft = menuIcon;
     let sidebar = ()=> <Sidebar/>;
     return(
-        <Router initial="Friends" {...this.props} ref="router" >
+        <Router initial="BeFitSuggestion" {...this.props} ref="router" >
           <Schema name="default" {...defaultSchema} />
           <Route name="Welcome" hideNavBar={true} component={HomeContent} title="" sidebar={sidebar} />
           <Route name="Help" component={Help} title="Help" sidebar={sidebar} />
@@ -190,7 +191,7 @@ class AApplication extends Component{
           <Route name="FriendsList" component={FriendsList} title="FriendsList" sidebar={sidebar} />
           <Route name="Blogs" component={Blogs} title="Blogs" sidebar={sidebar} />
           <Route name="RankedFriends" component={RankedFriends} title="RankedFriends" sidebar={sidebar} />
-          
+          <Route name="BeFitSuggestion" component={BeFitSuggestion} sidebar={sidebar} />
         </Router>
     );
   }
