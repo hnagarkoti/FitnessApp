@@ -68,12 +68,8 @@ import Help from './scenes/Help';
 import Blog from './scenes/Blog';
 import Friends from './scenes/Friends';
 import FriendsList from './scenes/FriendsList';
-<<<<<<< Updated upstream
 import RankedFriends from './scenes/RankedFriends';
-=======
 import BeFitSuggestion from './scenes/BeFitSuggestion';
-
->>>>>>> Stashed changes
 
 class AApplication extends Component{
 
