@@ -8,7 +8,8 @@ var {
   View,
   Image,
   Dimensions,
-  ScrollView
+  ScrollView,
+  TouchableHighlight
 } = require('react-native');
 
 // import { Card, Button, Avatar, Drawer, Divider, Subheader, COLOR, TYPO } from 'react-native-material-design';
@@ -20,7 +21,7 @@ var {
 // import NavBar from '../core/NavBar';
 // import Icon from 'react-native-vector-icons/MaterialIcons';
 // import TabBar from '../core/TabBar';
-// import { goto, goBack } from '../../libs/routerUtils';
+import { goto, goBack } from '../../libs/routerUtils';
 // import { ProfileTabBar, HomePageTabBar } from './tabIcons';
 
 var _ = require('lodash');
@@ -28,9 +29,10 @@ var {width, height} = Dimensions.get('window');
 
 // var IMAGE_URLS = _.flatten(_.times(5, () => {return ['http://www.123dentist.com/wp-content/uploads/2012/07/oral-health-care-and-pregnancy.jpg',
 //  'http://www.dailydosemd.com/wp-content/uploads/2012/11/marathon-646.jpg',
-//  'http://cdn-media-1.lifehack.org/wp-content/files/2014/08/cobrastretch.jpg', 
+//  'http://cdn-media-1.lifehack.org/wp-content/files/2014/08/cobrastretch.jpg',
 //  'http://www.pacific.edu/Images/administration/finance/hr/healthy-heart.jpg',
 //  'http://www.ecolab.com/~/media/Ecolab/Ecolab%20Home/Images/Markets/FandB/Food%20Processing/producemarket.jpg',
+
 //  'https://i.ytimg.com/vi/xwRhKzydhJ0/maxresdefault.jpg',
 //  'http://sharein.org/wp-content/uploads/2014/11/Lose-Belly-Fat1.jpg'
 //  ]}));
@@ -69,8 +71,12 @@ var IMAGE_URLS = [{
   text: 'Reduce Weight',
   month: 'August',
   id: 7
+},{
+  image: 'dummyImage',
+  text: 'More',
+  month: '',
+  id: 8
 }]
-
 
 var IMAGES_PER_ROW = 2
 
@@ -93,28 +99,33 @@ var Blogs = React.createClass({
     return {width: size, height: size}
   },
 
+  goToBlogPage(blog){
+    console.log('goToBlogPage',blog.id);
+    goto( this.context.store, 'Blog', { 'blogId': blog.id });
+  },
+
   renderRow(images) {
-    return images.map((uri) => {
+    return images.map((uri, index) => {
       return (
-        <Image style={[styles.image, this.calculatedSize()]} source={{uri: uri.image}} >
-
-        <Text style={styles.mainText}>
-        {uri.text}
-        </Text>
-
-        
-
-        </Image>
+        <View>
+        <TouchableHighlight onPress={ () => this.goToBlogPage(uri) } >
+          <Image style={[styles.image, this.calculatedSize()]} source={{uri: uri.image}} >
+            <Text style={styles.mainText}>
+            {uri.text}
+            </Text>
+          </Image>
+        </TouchableHighlight>
+        </View>
       )
     })
   },
 
   renderImagesInGroupsOf(count) {
-    return _.chunk(IMAGE_URLS, IMAGES_PER_ROW).map((imagesForRow) => {
+    return _.chunk(IMAGE_URLS, IMAGES_PER_ROW).map((imagesForRow, i) => {
       return (
-        <View style={styles.row}>
-          {this.renderRow(imagesForRow)}
-        </View>
+            <View style={styles.row}>
+              {this.renderRow(imagesForRow)}
+            </View>
       )
     })
   },
@@ -129,18 +140,14 @@ var Blogs = React.createClass({
 });
 
 var styles = StyleSheet.create({
-
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'flex-start',
-
+    justifyContent: 'flex-start'
   },
-
   image: {
     margin: 2
   },
-
   mainText: {
     fontSize : 23,
     color: 'black'

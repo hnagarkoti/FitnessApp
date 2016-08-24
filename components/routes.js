@@ -13,12 +13,10 @@ import {
   DeviceEventEmitter,
 } from 'react-native';
 
-
 import { connect } from 'react-redux';
 import { goto, goBack } from '../libs/routerUtils';
 import { bindActionCreators } from 'redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-// import Icon from 'react-native-vector-icons';
 import { mApi } from '../libs/Api';
 
 import {
@@ -64,24 +62,6 @@ let defaultSchema = {
 
 import HomeContent from './scenes/HomeContent';
 import Blogs from './scenes/Blogs';
-// import Profile from './scenes/User/ProfileContent';
-// import LoginView from './scenes/LoginView';
-// import About from './scenes/About/About.js';
-// import Password from './scenes/User/Password';
-// import Email from './scenes/User/Email';
-// import Tinder from './scenes/SlidingStuff/Tinder';
-// import Share from './scenes/Share';
-// import Product from './scenes/Product';
-// import Favourite from './scenes/Favourite';
-// import Alert from './scenes/Alert';
-// import FavouriteShare from './scenes/FavouriteShare';
-// import EmpId from './scenes/Auth/EmpId';
-// import OTP from './scenes/Auth/OTP';
-// import SetPass from './scenes/Auth/SetPass';
-// import PopUp from './scenes/PopUp';
-// import Preview from './scenes/Preview';
-// import Setting from './scenes/Settings';
-// import ProfilePreview from './scenes/User/ProfilePreview';
 import Dashboard from './scenes/Dashboard';
 import ActiveChallenges from './scenes/ActiveChallenges';
 import GuidedSession from './scenes/GuidedSession';
@@ -220,7 +200,7 @@ const styles = StyleSheet.create({
   drawer: {
     // borderStyle: 'solid', borderColor: '#000000', borderWidth: 10,
     // marginTop: 25,
-    
+
   },
 
   container: {
