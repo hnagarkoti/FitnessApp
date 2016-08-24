@@ -271,6 +271,7 @@ const Styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
+    padding: 12
   },
   gallerycontainer: {
     flex: 1,
