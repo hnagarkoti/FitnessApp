@@ -73,6 +73,7 @@ import FBLogin from './scenes/FBLogin';
 import BeFitSuggestion from './scenes/BeFitSuggestion';
 import LoginView from './scenes/LoginView';
 import SignUp from './scenes/SignUp';
+import HealthRead from './scenes/HealthRead';
 
 class AApplication extends Component{
 
@@ -175,7 +176,7 @@ class AApplication extends Component{
     defaultSchema.navLeft = menuIcon;
     let sidebar = ()=> <Sidebar/>;
     return(
-        <Router initial="Welcome" {...this.props} ref="router" >
+        <Router initial="HealthRead" {...this.props} ref="router" >
           <Schema name="default" {...defaultSchema} />
 
           <Route name="LoginView" hideNavBar={true} component={LoginView} />
@@ -199,7 +200,7 @@ class AApplication extends Component{
           <Route name="FriendsList" component={FriendsList} title="FriendsList" sidebar={sidebar} />
           <Route name="RankedFriends" component={RankedFriends} title="RankedFriends" sidebar={sidebar} />
 
-
+          <Route name="HealthRead" component={HealthRead} title="Healty Read" sidebar={sidebar} />
 
           <Route name="BeFitSuggestion" component={BeFitSuggestion} sidebar={sidebar} />
 
