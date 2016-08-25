@@ -89,7 +89,7 @@ class RankedFriends extends React.Component {
     }
     return (
       <View style={{flex: 1,flexDirection: 'row'}}>
-           <ScrollView horizontal={true}>
+           <ScrollView horizontal={true} minimumZoomScale={1} maximumZoomScale={2} centerContent={true}>
            {this.state.friendsData.map((friends)=>(
             <View style={ styles.container} >
               

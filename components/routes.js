@@ -73,6 +73,7 @@ import Blog from './scenes/Blog';
 import Friends from './scenes/Friends';
 import FriendsList from './scenes/FriendsList';
 import RankedFriends from './scenes/RankedFriends';
+import FBLogin from './scenes/FBLogin';
 
 class AApplication extends Component{
 
@@ -190,6 +191,8 @@ class AApplication extends Component{
           <Route name="FriendsList" component={FriendsList} title="FriendsList" sidebar={sidebar} />
           <Route name="Blogs" component={Blogs} title="Blogs" sidebar={sidebar} />
           <Route name="RankedFriends" component={RankedFriends} title="RankedFriends" sidebar={sidebar} />
+          <Route name="FBLogin" component={FBLogin} title="FBLogin" sidebar={sidebar} />
+          
           
         </Router>
     );

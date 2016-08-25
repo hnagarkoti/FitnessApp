@@ -103,6 +103,7 @@ class FriendsList extends React.Component {
         <View style={{flex: .2}}>
         <RankedFriends/>
         </View>
+        <View style={{flex: .1,backgroundColor: '#fff',alignItems:'center',justifyContent: 'center'}}><Text style={{fontSize: 22,fontWeight:'bold'}}>Ranking</Text></View>
         <View style={{flex: .4}}>
          <ScrollView style={{ backgroundColor: '#fff' }}>
            {this.state.friendsData.map((friends)=>(

@@ -236,6 +236,13 @@ export default class Sidebar extends Component {
               onPress: () => { this.goto('ChallengeHistory') },
               onLongPress: () => this.goto('ChallengeHistory')
             },
+            {
+              icon: 'settings',
+              value: 'FBLogin',
+              label: '8',
+              onPress: () => { this.goto('FBLogin') },
+              onLongPress: () => this.goto('FBLogin')
+            },
             
             {
               icon: 'help',
