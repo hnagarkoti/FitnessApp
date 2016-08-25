@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-// import Icon from 'react-native-vector-icons/MaterialIcons';
-import Icon from 'react-native-vector-icons';
-
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
 /**
@@ -31,7 +29,8 @@ export default class TabBar extends Component {
       out.push(<Icon key="tab-icon" {...item.icon} />);
     }
     if( item.text ){
-      out.push(<Text key="tab-text" {...item.textParams} >{item.text}</Text>);
+
+      out.push(<Text key="tab-text" {...item.textParams} style={item.style} >{item.text}</Text>);
     }
     return out;
   }
@@ -48,7 +47,7 @@ export default class TabBar extends Component {
 
   render(){
     let props = this.props;
-
+    console.log('props:-- ', this.props);
     return (
       <View style={ [ styles.tabBar, props.style ] }>
         {this.renderBody()}

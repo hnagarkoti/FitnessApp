@@ -25,11 +25,8 @@ class HomeContent extends React.Component {
 
   render() {
     return (
-      <View style={ styles.container }>
-        <NavBar navTitle="HOME" navLeft={ <Icon name="menu" size={ 30 } color="#fff" onPress={ this.context.openDrawer } /> } />
-          <View>
-            <Text>Home Page</Text>
-          </View>
+      <View>
+        <Text>Home Page</Text>
       </View>
       );
   }

@@ -52,7 +52,7 @@ let defaultSchema = {
   statusStyle: 'default',
   tabBar: TabBar,
   style: {
-    backgroundColor: '#ED1C26',
+    backgroundColor: '#206040',
   }
 };
 
@@ -71,6 +71,8 @@ import FriendsList from './scenes/FriendsList';
 import RankedFriends from './scenes/RankedFriends';
 import FBLogin from './scenes/FBLogin';
 import BeFitSuggestion from './scenes/BeFitSuggestion';
+import LoginView from './scenes/LoginView';
+import SignUp from './scenes/SignUp';
 
 class AApplication extends Component{
 
@@ -173,9 +175,18 @@ class AApplication extends Component{
     defaultSchema.navLeft = menuIcon;
     let sidebar = ()=> <Sidebar/>;
     return(
-        <Router initial="BeFitSuggestion" {...this.props} ref="router" >
+        <Router initial="Welcome" {...this.props} ref="router" >
           <Schema name="default" {...defaultSchema} />
-          <Route name="Welcome" hideNavBar={true} component={HomeContent} title="" sidebar={sidebar} />
+
+          <Route name="LoginView" hideNavBar={true} component={LoginView} />
+          <Route name="SignUp" hideNavBar={true} component={SignUp} />
+          <Route name="FBLogin" component={FBLogin} title="FBLogin" sidebar={sidebar} />
+
+          <Route name="Welcome" component={HomeContent} title="Home" sidebar={sidebar} />
+
+          <Route name="Blogs" component={Blogs} title="Blogs" sidebar={sidebar} />
+          <Route name="Blog" component={Blog} title="Blog" sidebar={sidebar} />
+
           <Route name="Help" component={Help} title="Help" sidebar={sidebar} />
           <Route name="Dashboard" component={Dashboard} title="Dashboard" sidebar={sidebar} />
           <Route name="ActiveChallenges" component={ActiveChallenges} title="ActiveChallenges" sidebar={sidebar} />
@@ -183,15 +194,15 @@ class AApplication extends Component{
           <Route name="Leaderboard" component={Leaderboard} title="Leaderboard" sidebar={sidebar} />
           <Route name="ChallengeHistory" component={ChallengeHistory} title="ChallengeHistory" sidebar={sidebar} />
           <Route name="Powerup" component={Powerup} title="Powerup" sidebar={sidebar} />
-          <Route name="Blog" component={Blog} title="Blog" sidebar={sidebar} />
+
           <Route name="Friends" component={Friends} title="Friends" sidebar={sidebar} />
           <Route name="FriendsList" component={FriendsList} title="FriendsList" sidebar={sidebar} />
-          <Route name="Blogs" component={Blogs} title="Blogs" sidebar={sidebar} />
           <Route name="RankedFriends" component={RankedFriends} title="RankedFriends" sidebar={sidebar} />
-          <Route name="FBLogin" component={FBLogin} title="FBLogin" sidebar={sidebar} />
-          
-          
+
+
+
           <Route name="BeFitSuggestion" component={BeFitSuggestion} sidebar={sidebar} />
+
         </Router>
     );
   }

@@ -22,8 +22,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignSelf: 'stretch',
     alignItems: 'center',
-    backgroundColor: '#ED1C26',
+    backgroundColor: '#206040',
     height: 45,
+    // borderStyle: 'solid', borderWidth: 2, borderColor: 'black'
   },
   titleContainer: {
     alignItems: 'center',

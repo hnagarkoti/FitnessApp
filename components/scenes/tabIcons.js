@@ -92,22 +92,38 @@ export function LoginTabBar ( store ){
   return [
       {
         containerStyle:{
-          backgroundColor: '#ED1C26',
+          // backgroundColor: '#ED1C26',
         },
-        icon:{
-          name: 'lock-open',
-          size: 29,
-          color: '#ffffff',
-          onPress: ()=>{ goto(store, 'loginView')}
+        // icon:{
+        //   name: 'lock-open',
+        //   text: 'Sign In',
+        //   size: 29,
+        //   color: '#ffffff',
+        //   onPress: ()=>{ goto(store, 'Blogs')}
+        // },
+        text: 'Sign In',
+        textParams: {
+          onPress: ()=>{ goto(store, 'SignUp')},
+        },
+        style: {
+          fontSize: 20,
         },
       },
       {
-        icon:{
-          name: 'person',
-          size: 33,
-          color: '#ffffff',
-          justifyContent: 'center',
-          onPress: ()=>{ goto(store, 'empid')}
+        // icon:{
+        //   name: 'person',
+        //   text: 'Sign Up',
+        //   size: 33,
+        //   color: '#ffffff',
+        //   justifyContent: 'center',
+        //   onPress: ()=>{ goto(store, 'Blogs')}
+        // },
+        text: 'Sign Up',
+        textParams: {
+          onPress: ()=>{ goto(store, 'SignUp')},
+        },
+        style: {
+          fontSize: 20,
         },
       }
     ]
@@ -167,4 +183,3 @@ export function ProfilePageTabbar ( store ){
     ),
   ]
 };
-
