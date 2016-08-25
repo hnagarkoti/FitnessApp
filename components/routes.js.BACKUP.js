@@ -69,8 +69,11 @@ import Blog from './scenes/Blog';
 import Friends from './scenes/Friends';
 import FriendsList from './scenes/FriendsList';
 import RankedFriends from './scenes/RankedFriends';
+<<<<<<< HEAD
 import FBLogin from './scenes/FBLogin';
+=======
 import BeFitSuggestion from './scenes/BeFitSuggestion';
+>>>>>>> 1962c89652ce98f80bb0d981af74b06013d178b0
 
 class AApplication extends Component{
 
@@ -188,10 +191,13 @@ class AApplication extends Component{
           <Route name="FriendsList" component={FriendsList} title="FriendsList" sidebar={sidebar} />
           <Route name="Blogs" component={Blogs} title="Blogs" sidebar={sidebar} />
           <Route name="RankedFriends" component={RankedFriends} title="RankedFriends" sidebar={sidebar} />
+<<<<<<< HEAD
           <Route name="FBLogin" component={FBLogin} title="FBLogin" sidebar={sidebar} />
           
           
+=======
           <Route name="BeFitSuggestion" component={BeFitSuggestion} sidebar={sidebar} />
+>>>>>>> 1962c89652ce98f80bb0d981af74b06013d178b0
         </Router>
     );
   }

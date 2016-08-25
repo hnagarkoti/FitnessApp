@@ -31,14 +31,18 @@ import {
 
 import Sidebar from './Sidebar';
 
+
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators( { ...routerActions }, dispatch),
   dispatch,
 });
+
 const mapStateToProps = state => ({
   router: state.router,
   // drawer: state.drawer,
 });
+
+
 
 let defaultSchema = {
   navBar: NavBar,
@@ -70,7 +74,6 @@ import Friends from './scenes/Friends';
 import FriendsList from './scenes/FriendsList';
 import RankedFriends from './scenes/RankedFriends';
 import FBLogin from './scenes/FBLogin';
-import BeFitSuggestion from './scenes/BeFitSuggestion';
 
 class AApplication extends Component{
 
@@ -173,7 +176,7 @@ class AApplication extends Component{
     defaultSchema.navLeft = menuIcon;
     let sidebar = ()=> <Sidebar/>;
     return(
-        <Router initial="BeFitSuggestion" {...this.props} ref="router" >
+        <Router initial="Friends" {...this.props} ref="router" >
           <Schema name="default" {...defaultSchema} />
           <Route name="Welcome" hideNavBar={true} component={HomeContent} title="" sidebar={sidebar} />
           <Route name="Help" component={Help} title="Help" sidebar={sidebar} />
@@ -191,7 +194,6 @@ class AApplication extends Component{
           <Route name="FBLogin" component={FBLogin} title="FBLogin" sidebar={sidebar} />
           
           
-          <Route name="BeFitSuggestion" component={BeFitSuggestion} sidebar={sidebar} />
         </Router>
     );
   }
