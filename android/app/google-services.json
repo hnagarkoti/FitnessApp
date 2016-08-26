@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "273314264209",
+    "project_id": "fitnessapp-1be3b"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273314264209:android:9d1240ed352c21f8",
+        "android_client_info": {
+          "package_name": "com.fitnessapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273314264209-kegegttmt7993u2sv5n1kr9lgubfq1rd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fitnessapp",
+            "certificate_hash": "811EE72DE276B26B42A4FCDD9606D1607E934AD0"
+          }
+        },
+        {
+          "client_id": "273314264209-0i4k3gq7dkoa4vcrfl70a9ng81o0llue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTpd1nVwX40wqk5HQfH87wpXLiKQmCxvg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
