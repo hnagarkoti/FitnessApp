@@ -13,7 +13,8 @@ import {
 } from 'react-native';
 var {width, height} = Dimensions.get('window');
 import Button from 'react-native-button';
-
+import FBLogin from './FBLogin';
+import GoogleLogin from './GoogleLogin';
 
 
 import CheckBox from 'react-native-checkbox';
@@ -81,8 +82,9 @@ class SignUp extends React.Component {
         </View>
 
         <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', padding: 50}}>
-          <Image style={{ width: 50, height: 50, borderRadius: 25 }} source={require('../../assests/images/fb.png')} />
-          <Image style={{ width: 50, height: 50, borderRadius: 25 }} source={require('../../assests/images/google.png')} />
+        
+         <FBLogin/>
+          <GoogleLogin/>
         </View>
 
       </View>
@@ -97,14 +99,14 @@ SignUp.contextTypes = {
 
 const styles = StyleSheet.create({
   row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start'
+    // flexDirection: 'row',
+    // alignItems: 'center',
+    // justifyContent: 'flex-start'
   },
   image: {
     // margin: 2,
-    width: width,
-    height: (height - height/1.5),
+    // width: width,
+    // height: (height - height/1.5),
     // borderColor: '#ff0000', borderStyle: 'solid', borderWidth: 2, // For Testing..
     // borderRadius: 70,
     // width: 140,
