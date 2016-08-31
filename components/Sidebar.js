@@ -24,11 +24,11 @@ const cs = StyleSheet.create({
      backgroundColor:'#ffffffb1',
      width:260,
      padding:14,
-      borderWidth: 5, 
+      borderWidth: 5,
       borderBottomColor: '#ED1C26',
       borderTopColor: '#fff0',
-      
-    
+
+
   },
   text: {
     color: '#fff',
@@ -57,7 +57,7 @@ const cs = StyleSheet.create({
 
   img: {
     margin: 10,
-   
+
     height: 100,
   },
 
@@ -108,7 +108,7 @@ class Section extends Component {
 }
 
 class BottomSection extends Component {
-  
+
 renderItem(props, i) {
     return (
       <TouchableHighlight
@@ -130,7 +130,7 @@ renderItem(props, i) {
       <View style={ [cs.sectionContainer] }>
         { this.props.items.map((v, i) => this.renderItem(v, i)) }
       </View>
-      
+
       </View>
     );
   }
@@ -183,16 +183,16 @@ export default class Sidebar extends Component {
     return (
       <View style={{ flex: 1}}>
       <Drawer theme='light'>
-          
-  
+
+
         <Drawer.Header
           image={<Image source={require('./../assests/images/nav.jpg') }/>}>
-          
+
           <TouchableHighlight
             onPress={() => { this.goto('profile') } }
             underlayColor="#99d9f4">
             <Image style={{marginTop: 5, height: 70, width: 70, borderRadius: 35}} source={require('../assests/images/ic.png')}/>
-            
+
           </TouchableHighlight>
           <View style={[cs.header,{flexDirection: 'row',alignItems: 'center',justifyContent: 'space-between',paddingHorizontal: 16}]}>
             <Text style={[styles.textOfWelcomeDrawer, COLOR.googleRed700, TYPO.paperFontTitle,]}>Hemant </Text>
@@ -230,6 +230,13 @@ export default class Sidebar extends Component {
               onLongPress: () => this.goto('Leaderboard')
             },
             {
+              icon: 'notifications',
+              value: 'Health Read',
+              label: '8',
+              onPress: () => { this.goto('HealthRead') },
+              onLongPress: () => this.goto('HealthRead')
+            },
+            {
               icon: 'settings',
               value: 'Challenge History',
               label: '8',
@@ -243,7 +250,7 @@ export default class Sidebar extends Component {
               onPress: () => { this.goto('FBLogin') },
               onLongPress: () => this.goto('FBLogin')
             },
-            
+
             {
               icon: 'help',
               value: 'Power Up',
@@ -268,7 +275,7 @@ export default class Sidebar extends Component {
             ]}
           />
           <Divider style={{ marginTop: 200 }} />
-          
+
           <BottomSection
             items={[{
                         icon: 'exit-to-app',
@@ -278,7 +285,7 @@ export default class Sidebar extends Component {
                         onLongPress: () => this.goto('Welcome')
                     }]}
           />
-         
+
         </Drawer>
         </View>
         );
@@ -294,4 +301,3 @@ Sidebar.contextTypes = {
   openDrawer: React.PropTypes.func,
   closeDrawer: React.PropTypes.func,
 };
-

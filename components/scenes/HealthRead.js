@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableHighlight, ScrollView } from 'react-native';
 import ScrollableTabView, { DefaultTabBar, ScrollableTabBar} from 'react-native-scrollable-tab-view';
+import HealthReadItems from './HealthReadItems';
 
 class HealthRead extends Component {
   constructor() {
@@ -14,7 +15,7 @@ class HealthRead extends Component {
 
   getTabsData() {
     var that = this;
-    return fetch('http://192.168.0.4:3000/HealthRead')
+    return fetch('http://192.168.1.101:3000/HealthRead')
       .then((response) => response.json())
       .then((responseJson) => {
         console.log('responseJson:--- ',responseJson[0].categories);
@@ -55,9 +56,10 @@ class HealthRead extends Component {
             renderTabBar={() => <ScrollableTabBar />}
           >
           {this.state.TabJson.map((val) =>(
-              <ScrollView tabLabel={val.name} key={val.id}>
-                <Text>{val.name}</Text>
-              </ScrollView>
+            <ScrollView tabLabel={val.name} key={val.id}>
+              <HealthReadItems id={val.id} />
+            </ScrollView>
+
             ))}
 
 
@@ -75,4 +77,6 @@ class HealthRead extends Component {
       );
   }
 }
+
+
 module.exports = HealthRead;

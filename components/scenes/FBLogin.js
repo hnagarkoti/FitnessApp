@@ -12,7 +12,8 @@ class FLogin extends Component {
   <FBLogin style={{ marginBottom: 10, }}
         permissions={["email","user_friends"]}
         loginBehavior={FBLoginManager.LoginBehaviors.Native}
-        onLogin={function(data){
+        onLogin={
+					function(data){
           console.log("Logged in!");
           console.log(data);
           _this.setState({ user : data.credentials });

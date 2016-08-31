@@ -58,7 +58,9 @@ class Api{
     if( ['POST', 'PUT', 'PATCH'].indexOf( method) !== -1 ){
       opts.body = body
     }
-    url += '?' + querystring.stringify( query );
+
+    // url += '?' + querystring.stringify( query );
+    console.log('inside genericRequest fun:- url:-- ', url, 'opts:- ', opts);
     return fetch( url, opts );
   }
 
@@ -66,7 +68,7 @@ class Api{
 
   /**
    * Do an Api request.
-   * 
+   *
    * @param {String} path - Api action path. eg `/users/123`
    * @param {String} method - method
    * @param {Object} query - query
@@ -77,6 +79,7 @@ class Api{
   request( path, method="GET", query={}, body={}, headers={} ){
     let url = this.endPoint + path;
     body = new RequestBody( body ) + '';
+    console.log('url:--- ', url);
     headers['Accept'] = 'application/json';
     headers['Content-Type'] = 'application/json';
     if(this.sessionId){
@@ -84,6 +87,7 @@ class Api{
     }
     return this.genericRequest( url, method, query, body, headers )
     .then( ( res ) =>{
+      console.log('res:-- ', res);
      return res.text();
    })
     .then( ( text )=>{
@@ -201,8 +205,8 @@ changeProfilePicture(file){
     return this.request('/starredCollaterals/'+id, 'DELETE' );
   }
 
-  getNotification(){
-    return this.request('/notification', 'GET');
+  getHealthReadStuff( id ){
+    return this.request('/SubCategories?categoryId='+id, 'GET');
   }
  deleteNotification(id){
     return this.request('/notification/'+id, 'DELETE');
@@ -251,4 +255,3 @@ let mApi = new Api( config.api );
 
 export default Api;
 export { mApi };
-

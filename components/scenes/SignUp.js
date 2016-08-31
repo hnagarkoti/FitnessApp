@@ -13,6 +13,9 @@ import {
 } from 'react-native';
 var {width, height} = Dimensions.get('window');
 import Button from 'react-native-button';
+
+
+
 import CheckBox from 'react-native-checkbox';
 import { goto, goBack } from '../../libs/routerUtils';
 
@@ -49,12 +52,7 @@ class SignUp extends React.Component {
           value={this.state.text}
         />
 
-        <Button
-          containerStyle={{padding:10, height:45, overflow:'hidden', borderRadius:4, backgroundColor: 'orange'}}
-          style={{fontSize: 20, color: 'green'}}
-          onPress={() => goto(this.context.store, 'Welcome')}>
-          Sign In!
-        </Button>
+
         </View>
 
         <View style={{justifyContent: 'center', alignItems: 'center'}}>
@@ -63,6 +61,16 @@ class SignUp extends React.Component {
           checked={this.state.checked}
           onChange={(checked) => this.setState({ checked: !(this.state.checked) })}
           />
+
+        </View>
+
+        <View style={{justifyContent: 'center', padding: 30}}>
+          <Button
+            containerStyle={{padding:10, height:45, overflow:'hidden', borderRadius:4, backgroundColor: 'orange'}}
+            style={{fontSize: 20, color: 'green'}}
+            onPress={() => goto(this.context.store, 'Welcome')}>
+            Sign In!
+          </Button>
         </View>
 
         <View style={{justifyContent: 'center', alignItems: 'center'}}>

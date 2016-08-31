@@ -1,6 +1,6 @@
 let config = {
   api: {
-    endPoint: 'http://104.236.89.230:8004'
+    endPoint: 'http://192.168.1.101:3000'
   }
 }
 

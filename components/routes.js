@@ -74,7 +74,9 @@ import BeFitSuggestion from './scenes/BeFitSuggestion';
 import LoginView from './scenes/LoginView';
 import SignUp from './scenes/SignUp';
 import HealthRead from './scenes/HealthRead';
-import GoogleLogin from './scenes/GoogleLogin';
+// import GoogleLogin from './scenes/GoogleLogin';
+
+import HealthReadItems from './scenes/HealthReadItems';
 
 class AApplication extends Component{
 
@@ -177,7 +179,9 @@ class AApplication extends Component{
     defaultSchema.navLeft = menuIcon;
     let sidebar = ()=> <Sidebar/>;
     return(
-        <Router initial="GoogleLogin" {...this.props} ref="router" >
+
+        <Router initial="LoginView" {...this.props} ref="router" >
+
           <Schema name="default" {...defaultSchema} />
 
           <Route name="LoginView" hideNavBar={true} component={LoginView} />
@@ -202,14 +206,15 @@ class AApplication extends Component{
           <Route name="RankedFriends" component={RankedFriends} title="RankedFriends" sidebar={sidebar} />
 
           <Route name="HealthRead" component={HealthRead} title="Healty Read" sidebar={sidebar} />
+          <Route name="HealthReadItems" component={HealthReadItems} sidebar={sidebar} />
 
           <Route name="BeFitSuggestion" component={BeFitSuggestion} sidebar={sidebar} />
-          <Route name="GoogleLogin" component={GoogleLogin} title="GoogleLogin" sidebar={sidebar} />
 
         </Router>
     );
   }
 }
+// <Route name="GoogleLogin" component={GoogleLogin} title="GoogleLogin" sidebar={sidebar} />
 
 const styles = StyleSheet.create({
   drawer: {
