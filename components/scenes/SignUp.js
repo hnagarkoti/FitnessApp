@@ -84,8 +84,11 @@ class SignUp extends React.Component {
         <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', padding: 50}}>
         
          <FBLogin/>
+        </View>
+        <View style={{flexDirection: 'row'}}>
           <GoogleLogin/>
         </View>
+
 
       </View>
     )

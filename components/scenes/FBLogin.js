@@ -51,9 +51,8 @@ class FLogin extends Component {
 const styles=StyleSheet.create({
 	mainContainer: {
     justifyContent: 'center',
-    flex: 2,
-    backgroundColor: 'white',
-    padding: 30,
+    flex: 2
+    
     // borderStyle: 'solid', borderWidth: 2, borderColor: '#dabe00ff',
   }
 })
