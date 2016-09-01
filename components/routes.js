@@ -74,6 +74,8 @@ import BeFitSuggestion from './scenes/BeFitSuggestion';
 import LoginView from './scenes/LoginView';
 import SignUp from './scenes/SignUp';
 import HealthRead from './scenes/HealthRead';
+import Settings from './scenes/Settings';
+import EditProfile from './scenes/EditProfile';
 // import GoogleLogin from './scenes/GoogleLogin';
 
 import HealthReadItems from './scenes/HealthReadItems';
@@ -209,6 +211,11 @@ class AApplication extends Component{
           <Route name="HealthReadItems" component={HealthReadItems} sidebar={sidebar} />
 
           <Route name="BeFitSuggestion" component={BeFitSuggestion} sidebar={sidebar} />
+          <Route name="Settings" component={Settings} sidebar={sidebar} />
+
+          <Route name="EditProfile" component={EditProfile} sidebar={sidebar} />
+          
+
 
         </Router>
     );

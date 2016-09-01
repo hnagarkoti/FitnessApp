@@ -4,9 +4,9 @@ import { Card, Button, Avatar, Drawer, Divider, Subheader, COLOR, TYPO } from 'r
 import styles from './scenes/styles';
 // import About from './scenes/About/About.js';
 // // import Profile from './scenes/User/ProfileContent';
-// import LoginView from './scenes/LoginView';
+import Settings from './scenes/Settings';
 import { goto, goBack, reset } from '../libs/routerUtils';
-// import Alert from './scenes/Alert';
+import EditProfile from './scenes/EditProfile';
 // import { logout } from '../libs/session';
 // import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -189,16 +189,23 @@ export default class Sidebar extends Component {
 
         <Drawer.Header
           image={<Image source={require('./../assests/images/nav.jpg') }/>}>
-
+          <TouchableHighlight style={{right:-240,top:5}} onPress={() => { this.goto('Settings') } }>
+          <Icon name="settings" size={25} color="#900"/>
+          </TouchableHighlight>
           <TouchableHighlight
             onPress={() => { this.goto('profile') } }
             underlayColor="#99d9f4">
             <Image style={{marginTop: 5, height: 70, width: 70, borderRadius: 35}} source={require('../assests/images/ic.png')}/>
 
           </TouchableHighlight>
-          <View style={[cs.header,{flexDirection: 'row',alignItems: 'center',justifyContent: 'space-between'}]}>
+          <View style={[cs.header,{flexDirection: 'row',alignItems: 'center'}]}>
+          
             <Text style={[styles.textOfWelcomeDrawer,{ color: 'white' }, TYPO.paperFontTitle,]}>Hemant Nagarkoti </Text>
+            <TouchableHighlight onPress={() => { this.goto('EditProfile') } }>
+            <Icon name="edit" size={25} color="#900"/>
+            </TouchableHighlight>
           </View>
+
         </Drawer.Header>
 
         <Section
