@@ -23,10 +23,10 @@ const cs = StyleSheet.create({
      top:25,
      backgroundColor:'#000000',
      width:window.width,
-     padding:14,
-      borderWidth: 5,
-      borderBottomColor: '#ED1C26',
-      borderTopColor: '#fff0',
+     padding:20,
+      // borderWidth: 5,
+      borderBottomColor: '#000000',
+      // borderTopColor: '#fff0',
 
 
   },
@@ -43,6 +43,7 @@ const cs = StyleSheet.create({
     backgroundColor: '#ED1C26',
   },
   sectionItem: {
+    // marginTop: 0,
     padding: 20,
     flexDirection: 'row',
     alignItems: 'center',
@@ -73,7 +74,7 @@ const cs = StyleSheet.create({
     height: 70,
     width: 70,
     borderRadius: 35,
-     borderColor: '#880088', borderStyle: 'solid', borderWidth: 2, // For Testing..
+    borderColor: '#880088', borderStyle: 'solid', borderWidth: 2, // For Testing..
   }
 })
 
@@ -195,8 +196,8 @@ export default class Sidebar extends Component {
             <Image style={{marginTop: 5, height: 70, width: 70, borderRadius: 35}} source={require('../assests/images/ic.png')}/>
 
           </TouchableHighlight>
-          <View style={[cs.header,{flexDirection: 'row',alignItems: 'center',justifyContent: 'space-between',paddingHorizontal: 16}]}>
-            <Text style={[styles.textOfWelcomeDrawer, COLOR.googleRed700, TYPO.paperFontTitle,]}>Hemant </Text>
+          <View style={[cs.header,{flexDirection: 'row',alignItems: 'center',justifyContent: 'space-between'}]}>
+            <Text style={[styles.textOfWelcomeDrawer,{ color: 'white' }, TYPO.paperFontTitle,]}>Hemant Nagarkoti </Text>
           </View>
         </Drawer.Header>
 
@@ -294,7 +295,7 @@ export default class Sidebar extends Component {
 }
 var styles1 = StyleSheet.create({
   drawer:{
-    width:200
+    width:window.width
   },
 });
 Sidebar.contextTypes = {
