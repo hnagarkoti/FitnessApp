@@ -201,7 +201,7 @@ export default class Sidebar extends Component {
           <View style={[cs.header,{flexDirection: 'row',alignItems: 'center'}]}>
           
             <Text style={[styles.textOfWelcomeDrawer,{ color: 'white' }, TYPO.paperFontTitle,]}>Hemant Nagarkoti </Text>
-            <TouchableHighlight onPress={() => { this.goto('EditProfile') } }>
+            <TouchableHighlight style={{right:-70}} onPress={() => { this.goto('EditProfile') } }>
             <Icon name="edit" size={25} color="#900"/>
             </TouchableHighlight>
           </View>
