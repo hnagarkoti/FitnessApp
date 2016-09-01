@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { mApi } from '../libs/Api';
 var window = Dimensions.get('window');
 var imgURL = 'http://pickaface.net/includes/themes/clean/img/slide2.png';
-let iconClr = '#ED1C26';
+let iconClr = '#008000';
 
 const cs = StyleSheet.create({
   header:{
@@ -21,8 +21,8 @@ const cs = StyleSheet.create({
      position:'relative',
      right:25,
      top:25,
-     backgroundColor:'#ffffffb1',
-     width:260,
+     backgroundColor:'#000000',
+     width:window.width,
      padding:14,
       borderWidth: 5,
       borderBottomColor: '#ED1C26',
@@ -34,6 +34,7 @@ const cs = StyleSheet.create({
     color: '#fff',
     fontWeight: '500',
     fontSize: 16,
+
   },
   logoutButton: {
     padding: 5,
@@ -45,9 +46,10 @@ const cs = StyleSheet.create({
     padding: 20,
     flexDirection: 'row',
     alignItems: 'center',
+    backgroundColor: 'black'
   },
   sectionContainer: {
-
+    backgroundColor: 'black'
   },
   icon: {
     color: iconClr,
@@ -57,7 +59,6 @@ const cs = StyleSheet.create({
 
   img: {
     margin: 10,
-
     height: 100,
   },
 

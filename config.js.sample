@@ -1,7 +1,7 @@
 
 let config = {
   api: {
-    endPoint: 'http://localhost:8000'
+    endPoint: 'http://192.168.1.250:3000'
   }
 }
 

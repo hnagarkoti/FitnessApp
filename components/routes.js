@@ -124,7 +124,7 @@ class AApplication extends Component{
         style={styles.drawer}
         ref="drawer"
         drawerLockMode={ this.renderSideBar()? 'unlocked' : 'locked-closed' }
-        drawerWidth={220}
+        drawerWidth={window.width}
         onDrawerOpen={() => {
           this._overrideBackPressForDrawerLayout = true;
         }}
@@ -180,7 +180,7 @@ class AApplication extends Component{
     let sidebar = ()=> <Sidebar/>;
     return(
 
-        <Router initial="LoginView" {...this.props} ref="router" >
+        <Router initial="HealthRead" {...this.props} ref="router" >
 
           <Schema name="default" {...defaultSchema} />
 
@@ -219,6 +219,7 @@ class AApplication extends Component{
 const styles = StyleSheet.create({
   drawer: {
     // borderStyle: 'solid', borderColor: '#000000', borderWidth: 10,
+    // backgroundColor: 'gray'
     // marginTop: 25,
 
   },

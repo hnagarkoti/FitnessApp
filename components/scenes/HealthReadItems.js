@@ -35,7 +35,7 @@ class HealthReadItems extends Component {
   loadData(){
     var that = this;
     var id = this.props.id;
-    var url = 'http://192.168.1.101:3000/SubCategories?categoryId='+id;
+    var url = 'http://192.168.1.250:3000/SubCategories?categoryId='+id;
     return fetch(url)
       .then((response) => response.json())
       .then((responseJson) => {
