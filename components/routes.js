@@ -56,29 +56,33 @@ let defaultSchema = {
   }
 };
 
-import HomeContent from './scenes/HomeContent';
-import Blogs from './scenes/Blogs';
-import Dashboard from './scenes/Dashboard';
 import ActiveChallenges from './scenes/ActiveChallenges';
-import GuidedSession from './scenes/GuidedSession';
-import Leaderboard from './scenes/Leaderboard';
-import ChallengeHistory from './scenes/ChallengeHistory';
-import Powerup from './scenes/Powerup';
-import Help from './scenes/Help';
 import Blog from './scenes/Blog';
+import Blogs from './scenes/Blogs';
+import BeFitSuggestion from './scenes/BeFitSuggestion';
+import ChallengeHistory from './scenes/ChallengeHistory';
+import Dashboard from './scenes/Dashboard';
+import FBLogin from './scenes/FBLogin';
 import Friends from './scenes/Friends';
 import FriendsList from './scenes/FriendsList';
-import RankedFriends from './scenes/RankedFriends';
-import FBLogin from './scenes/FBLogin';
-import BeFitSuggestion from './scenes/BeFitSuggestion';
+import GuidedSession from './scenes/GuidedSession';
+import Help from './scenes/Help';
+import HealthRead from './scenes/HealthRead';
+import HealthReadItems from './scenes/HealthReadItems';
+import HomeContent from './scenes/HomeContent';
+import Leaderboard from './scenes/Leaderboard';
 import LoginView from './scenes/LoginView';
+import Powerup from './scenes/Powerup';
+import RankedFriends from './scenes/RankedFriends';
 import SignUp from './scenes/SignUp';
+
 import HealthRead from './scenes/HealthRead';
 import Settings from './scenes/Settings';
 import EditProfile from './scenes/EditProfile';
 // import GoogleLogin from './scenes/GoogleLogin';
 
-import HealthReadItems from './scenes/HealthReadItems';
+
+// import GoogleLogin from './scenes/GoogleLogin';
 
 class AApplication extends Component{
 
@@ -182,7 +186,7 @@ class AApplication extends Component{
     let sidebar = ()=> <Sidebar/>;
     return(
 
-        <Router initial="HealthRead" {...this.props} ref="router" >
+        <Router initial="Welcome" {...this.props} ref="router" >
 
           <Schema name="default" {...defaultSchema} />
 
@@ -214,7 +218,7 @@ class AApplication extends Component{
           <Route name="Settings" component={Settings} sidebar={sidebar} />
 
           <Route name="EditProfile" component={EditProfile} sidebar={sidebar} />
-          
+
 
 
         </Router>
