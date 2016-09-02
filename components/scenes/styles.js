@@ -416,7 +416,8 @@ const Styles = StyleSheet.create({
    height:100
    },
    drawer:{
-    width:100
+    width:50
+
    }
 
 });

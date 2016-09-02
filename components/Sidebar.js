@@ -27,9 +27,8 @@ const cs = StyleSheet.create({
       // borderWidth: 5,
       borderBottomColor: '#000000',
       // borderTopColor: '#fff0',
-
-
   },
+
   text: {
     color: '#fff',
     fontWeight: '500',
@@ -44,10 +43,11 @@ const cs = StyleSheet.create({
   },
   sectionItem: {
     // marginTop: 0,
-    padding: 20,
+    padding: 10,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'black'
+    backgroundColor: 'black',
+    height:75
   },
   sectionContainer: {
     backgroundColor: 'black'
@@ -57,10 +57,9 @@ const cs = StyleSheet.create({
     fontSize: 20,
     marginLeft: 5,
   },
-
-  img: {
-    margin: 10,
-    height: 100,
+img: {
+    width:50,
+    height:50
   },
 
   itemText: {
@@ -185,29 +184,30 @@ export default class Sidebar extends Component {
     return (
       <View style={{ flex: 1}}>
       <Drawer theme='light'>
-
-
-        <Drawer.Header
-          image={<Image source={require('./../assests/images/nav.jpg') }/>}>
-          <TouchableHighlight style={{right:-240,top:5}} onPress={() => { this.goto('Settings') } }>
-          <Icon name="settings" size={25} color="#900"/>
-          </TouchableHighlight>
-          <TouchableHighlight
+<View style={{backgroundColor: 'black', marginBottom: 0}}>
+<Drawer.Header image={<Image source={require('./../assests/images/nav.jpg') }/>} >
+          <View style={{flex: 1,flexDirection: 'column'}}>
+              <View style={{flex: 0.7}}> 
+              <TouchableHighlight
             onPress={() => { this.goto('profile') } }
             underlayColor="#99d9f4">
-            <Image style={{marginTop: 5, height: 70, width: 70, borderRadius: 35}} source={require('../assests/images/ic.png')}/>
-
+            <Image style={{marginTop: 10, height: 70, width: 70}} source={require('../assests/images/ic.png')}/>
           </TouchableHighlight>
-          <View style={[cs.header,{flexDirection: 'row',alignItems: 'center'}]}>
-          
-            <Text style={[styles.textOfWelcomeDrawer,{ color: 'white' }, TYPO.paperFontTitle,]}>Hemant Nagarkoti </Text>
-            <TouchableHighlight style={{right:-70}} onPress={() => { this.goto('EditProfile') } }>
+          <Text style={{ color: 'red',fontSize: 20, fontWeight: 'bold' }}>Jhon </Text>
+          <Text style={{ color: 'red',fontSize: 20, fontWeight: 'bold' }}>Jhon@gmail.com</Text>
+
+          </View>
+            <View style={{flex: 0.3}}> 
+            <TouchableHighlight style={{right:-240,top:-80}} onPress={() => { this.goto('Settings') } }>
+          <Icon name="settings" size={25} color="#900"/></TouchableHighlight>
+          <TouchableHighlight style={{right:-240,top:-30}} onPress={() => { this.goto('EditProfile') } }>
             <Icon name="edit" size={25} color="#900"/>
             </TouchableHighlight>
+            </View>
+           
           </View>
-
         </Drawer.Header>
-
+        </View>
         <Section
           items={[
             {
@@ -222,7 +222,10 @@ export default class Sidebar extends Component {
               value: 'Active Challenges',
               onPress: () => { this.goto('ActiveChallenges') },
               onLongPress: () => this.goto('ActiveChallenges')
-            },
+            }]} />
+            <Divider style={{backgroundColor:'red'}}/>
+            <Section
+             items={[
             {
               icon: 'photo-library',
               value: 'Guided Session',
@@ -237,7 +240,10 @@ export default class Sidebar extends Component {
               label: '8',
               onPress: () => { this.goto('Leaderboard') },
               onLongPress: () => this.goto('Leaderboard')
-            },
+            }]} />
+            <Divider  style={{backgroundColor:'red'}}/>
+             <Section
+             items={[
             {
               icon: 'notifications',
               value: 'Health Read',
@@ -251,7 +257,10 @@ export default class Sidebar extends Component {
               label: '8',
               onPress: () => { this.goto('ChallengeHistory') },
               onLongPress: () => this.goto('ChallengeHistory')
-            },
+            }]} />
+            <Divider  style={{backgroundColor:'red'}} />
+            <Section
+             items={[
             {
               icon: 'settings',
               value: 'FBLogin',
@@ -266,7 +275,10 @@ export default class Sidebar extends Component {
               label: '8',
               onPress: () => { this.goto('Powerup') },
               onLongPress: () => this.goto('Powerup')
-            },
+            }]} />
+            <Divider  style={{backgroundColor:'red'}} />
+            <Section
+             items={[
             {
               icon: 'settings',
               value: 'Friends',
@@ -274,27 +286,17 @@ export default class Sidebar extends Component {
               onPress: () => { this.goto('Friends') },
               onLongPress: () => this.goto('Friends')
             },
+
             {
-              icon: 'settings',
-              value: 'Blog',
+              icon: 'exit-to-app',
+              value: 'Logout',
               label: '8',
               onPress: () => { this.goto('Blog') },
               onLongPress: () => this.goto('Blog')
             }
             ]}
           />
-          <Divider style={{ marginTop: 200 }} />
-
-          <BottomSection
-            items={[{
-                        icon: 'exit-to-app',
-                        value: 'Logout',
-                        label: '8',
-                        onPress: () => this.goto('Welcome'),
-                        onLongPress: () => this.goto('Welcome')
-                    }]}
-          />
-
+          
         </Drawer>
         </View>
         );
@@ -302,7 +304,8 @@ export default class Sidebar extends Component {
 }
 var styles1 = StyleSheet.create({
   drawer:{
-    width:window.width
+    width:window.width,
+    backgroundColor:'black'
   },
 });
 Sidebar.contextTypes = {

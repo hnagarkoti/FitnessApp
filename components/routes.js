@@ -76,7 +76,7 @@ import Powerup from './scenes/Powerup';
 import RankedFriends from './scenes/RankedFriends';
 import SignUp from './scenes/SignUp';
 
-import HealthRead from './scenes/HealthRead';
+// import HealthRead from './scenes/HealthRead';
 import Settings from './scenes/Settings';
 import EditProfile from './scenes/EditProfile';
 // import GoogleLogin from './scenes/GoogleLogin';
@@ -127,7 +127,7 @@ class AApplication extends Component{
   render() {
     return (
       <DrawerLayoutAndroid
-        style={styles.drawer}
+        drawerBackgroundColor="black"
         ref="drawer"
         drawerLockMode={ this.renderSideBar()? 'unlocked' : 'locked-closed' }
         drawerWidth={window.width}
@@ -230,7 +230,7 @@ class AApplication extends Component{
 const styles = StyleSheet.create({
   drawer: {
     // borderStyle: 'solid', borderColor: '#000000', borderWidth: 10,
-    // backgroundColor: 'gray'
+    backgroundColor: 'black'
     // marginTop: 25,
 
   },

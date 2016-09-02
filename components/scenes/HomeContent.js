@@ -53,7 +53,7 @@ class HomeContent extends React.Component {
         pagingEnabled={true}
         showsHorizontalScrollIndicator={false}
         horizontal={true}>
-          <View style={{height: height/10, flexDirection: 'row', justifyContent: 'space-between', alignItems:'center', flexWrap: 'nowrap', alignContent: 'space-between' }}>
+          <View style={{height: height/10, flexDirection: 'row', justifyContent: 'space-between', alignItems:'center', flexWrap: 'nowrap', alignContent: 'space-between',padding:20 }}>
           {this.state.weekValues.map((val, i) => (
 
             <DateScrolViewPart val={val} />
