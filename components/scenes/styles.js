@@ -416,26 +416,10 @@ const Styles = StyleSheet.create({
    height:100
    },
    drawer:{
-    width:100
-  },
 
-   triangleLeft: {
-    transform: [
-      {rotate: '-90deg'}
-    ]
-  },
-  triangle: {
-    width: 0,
-    height: 0,
-    backgroundColor: 'transparent',
-    borderStyle: 'solid',
-    borderLeftWidth: 50,
-    borderRightWidth: 50,
-    borderBottomWidth: 100,
-    borderLeftColor: 'transparent',
-    borderRightColor: 'transparent',
-    borderBottomColor: 'red'
-  }
+    width:50
+
+   }
 
 });
 

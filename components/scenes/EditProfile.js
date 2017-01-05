@@ -7,12 +7,12 @@ import Spinner from '../core/Spinner';
 import { mApi } from '../../libs/Api';
 import Link from '../core/Link';
 import ButtonLink from '../core/ButtonLink';
-import styles from './styles';
+//import styles from './styles';
 import NavBar from '../core/NavBar';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import TabBar from '../core/TabBar';
 import { goto, goBack } from '../../libs/routerUtils';
-import { ProfileTabBar, HomePageTabBar } from './tabIcons';
+import { ProfileTabBar, EditPageTabBar } from './tabIcons';
 
 
 
@@ -26,10 +26,12 @@ class EditProfile extends React.Component {
   render() {
     return (
       <View style={ styles.container }>
-        <NavBar navTitle="HOME" navLeft={ <Icon name="menu" size={ 30 } color="#fff" onPress={ this.context.openDrawer } /> } />
-          <View>
+       
+         
             <Text>EditProfile Page</Text>
-          </View>
+         <View style={{bottom:-449}}>
+          <TabBar items={EditPageTabBar(this.context.store)} />
+         </View>
       </View>
       );
   }
@@ -44,5 +46,14 @@ class EditProfile extends React.Component {
 
 }
 
-
+const styles = StyleSheet.create({
+container: {
+    flex: 1,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderStyle:'solid',
+    borderColor:'red'
+  }
+})
 module.exports = EditProfile;

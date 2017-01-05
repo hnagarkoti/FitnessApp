@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Link from '../core/Link';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import { goto, goBack } from '../../libs/routerUtils';
 
 export  function BackOnlyTabbar( store ){
@@ -30,11 +31,11 @@ export  function CloseOnlyTabbar( store ){
     ]
   };
 
-export  function HomePageTabBar( store ){
+export  function EditPageTabBar( store ){
   return [
       {
         icon:{
-          name: 'home',
+          name: 'add-circle-outline',
           size: 30,
           color: '#ffffff',
           onPress: ()=>{ goto(store, 'Welcome')}

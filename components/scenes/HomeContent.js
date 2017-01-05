@@ -85,7 +85,7 @@ class HomeContent extends React.Component {
             </View>
             <View>
                 <Image source={require('../../assests/images/cover.jpg')} />
-                <Text style={{fontSize:20}}>Swipe me left right 3</Text>
+                <Text style={{fontSize:20}}>Swipe me left right</Text>
             </View>
           </ScrollView>
           <ScrollView horizontal={true}>
