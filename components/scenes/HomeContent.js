@@ -27,7 +27,8 @@ class HomeContent extends React.Component {
     super();
     var d = new Date();
     this.state = {
-      weekValues: this.getWeek(d)
+      weekValues: this.getWeek(d),
+      offset: 0
     }
   }
 
@@ -42,28 +43,67 @@ class HomeContent extends React.Component {
     console.log('onContentSizeChange:--- ', contentWidth, 'height ', contentHeight);
   }
 
-  onScroll(){
-    console.log('onScroll called');
-  }
+  getLastSunday(d) {
+     d = new Date(d);
+     var day = d.getDay(),
+         diff = d.getDate() - day; // adjust when day is sunday
+     return new Date(d.setDate(diff));
+   }
+
+  handleScroll(event: Object) {
+    console.log('handleScroll');
+   console.log('x:- ',event.nativeEvent.contentOffset.x, 'y:- ',event.nativeEvent.contentOffset.y);
+   var currentOffset = event.nativeEvent.contentOffset.x;
+        var direction = currentOffset > this.offset ? 'left' : 'right';
+    this.state.offset = currentOffset;
+    console.log(direction);
+  //  if(event.nativeEvent.contentOffset.x <= 0){
+  //    console.log('x val:-- ', event.nativeEvent.contentOffset.x);
+   //
+   //
+    //   var oneWeekAgo = this.getLastSunday(new Date());
+    //   var newSundayDate = new Date(oneWeekAgo.setDate(oneWeekAgo.getDate() - 7));
+    //   console.log('newSundayDate:-- ', newSundayDate);
+    //  var newPreviousWeekData = this.getWeek(newSundayDate);
+    //  console.log('output:-- ', newPreviousWeekData);
+  //  }
+ };
 
   render() {
+    var url1 = "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTuNN0jlYeNA5B1YlD4k6eEMQtDAQA4rl3Pp7D9rXy1Myp-PhVJNQ"
     return (
-      <View style={{flex: 1}}>
-        <ScrollView
-        pagingEnabled={true}
-        showsHorizontalScrollIndicator={false}
-        horizontal={true}>
-          <View style={{height: height/10, flexDirection: 'row', justifyContent: 'space-between', alignItems:'center', flexWrap: 'nowrap', alignContent: 'space-between' }}>
-          {this.state.weekValues.map((val, i) => (
+      <ScrollView>
+          <ScrollView horizontal={true}>
+          <Image source="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTuNN0jlYeNA5B1YlD4k6eEMQtDAQA4rl3Pp7D9rXy1Myp-PhVJNQ" />
 
-            <DateScrolViewPart val={val} />
+            <View>
+                <Text style={{fontSize:20}}>Swipe me left right</Text>
+            </View>
+            <View>
+                <Image source="https://ukofit.files.wordpress.com/2016/08/what-women-should-wear-to-the-gym-21.jpg" />
+                <Text style={{fontSize:20}}>Swipe me left right 2</Text>
+            </View>
+            <View>
+                <Image source={require('../../assests/images/cover.jpg')} />
+                <Text style={{fontSize:20}}>Swipe me left right 3</Text>
+            </View>
+          </ScrollView>
+          <ScrollView horizontal={true}>
+            <View>
+                <Image source={require('../../assests/images/cover.jpg')} />
+                <Text style={{fontSize:20}}>Yoga1</Text>
+            </View>
+            <View>
+                <Image source={require('../../assests/images/cover.jpg')} />
+                <Text style={{fontSize:20}}>Yoga2</Text>
+            </View>
+            <View>
+                <Image source={require('../../assests/images/cover.jpg')} />
+                <Text style={{fontSize:20}}>Yoga3</Text>
+            </View>
+          </ScrollView>
 
-          ))}
-
-          </View>
         </ScrollView>
-        <View style={{ borderColor: 'gray', borderStyle: 'solid', borderWidth: 2 }}></View>
-      </View>
       );
   }
 
@@ -174,18 +214,6 @@ class HomeContent extends React.Component {
     }
     return out;
   };
-}
-
-class DateScrolViewPart extends React.Component {
-  render(){
-    return(
-      <View style={{alignSelf: 'center'}}>
-        <View style={{ backgroundColor: 'gray', borderRadius: 6, width: 12, height: 12}}>
-        </View>
-        <Text>{ this.props.val.getDayName }</Text>
-      </View>
-    )
-  }
 }
 
 module.exports = HomeContent;

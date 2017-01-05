@@ -76,9 +76,10 @@ import Powerup from './scenes/Powerup';
 import RankedFriends from './scenes/RankedFriends';
 import SignUp from './scenes/SignUp';
 
-import HealthRead from './scenes/HealthRead';
 import Settings from './scenes/Settings';
 import EditProfile from './scenes/EditProfile';
+
+import InvertedScrollComponent from './scenes/InvertedScrollComponent';
 // import GoogleLogin from './scenes/GoogleLogin';
 
 
@@ -212,14 +213,14 @@ class AApplication extends Component{
           <Route name="RankedFriends" component={RankedFriends} title="RankedFriends" sidebar={sidebar} />
 
           <Route name="HealthRead" component={HealthRead} title="Healty Read" sidebar={sidebar} />
-          <Route name="HealthReadItems" component={HealthReadItems} sidebar={sidebar} />
+          <Route name="HealthReadItems" component={HealthReadItems} title="HealthReadItems" sidebar={sidebar} />
 
-          <Route name="BeFitSuggestion" component={BeFitSuggestion} sidebar={sidebar} />
+          <Route name="BeFitSuggestion" component={BeFitSuggestion} title="BeFitSuggestion" sidebar={sidebar} />
           <Route name="Settings" component={Settings} sidebar={sidebar} />
 
           <Route name="EditProfile" component={EditProfile} sidebar={sidebar} />
 
-
+          <Route name="InvertedScrollComponent" component={InvertedScrollComponent} title="InvertedScrollComponent" sidebar={sidebar} />
 
         </Router>
     );

@@ -15,7 +15,7 @@ class HealthRead extends Component {
 
   getTabsData() {
     var that = this;
-    return fetch('http://192.168.1.250:3000/HealthRead')
+    return fetch('http://192.168.0.13:3000/HealthRead')
       .then((response) => response.json())
       .then((responseJson) => {
         console.log('responseJson:--- ',responseJson[0].categories);
