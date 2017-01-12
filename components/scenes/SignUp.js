@@ -14,7 +14,7 @@ import {
 var {width, height} = Dimensions.get('window');
 import Button from 'react-native-button';
 import FBLogin from './FBLogin';
-import GoogleLogin from './GoogleLogin';
+// import GoogleLogin from './GoogleLogin';
 
 
 import CheckBox from 'react-native-checkbox';
@@ -82,11 +82,11 @@ class SignUp extends React.Component {
         </View>
 
         <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', padding: 50}}>
-        
+
          <FBLogin/>
         </View>
         <View style={{flexDirection: 'row'}}>
-          <GoogleLogin/>
+        {/* Goggle login Button */}
         </View>
 
 

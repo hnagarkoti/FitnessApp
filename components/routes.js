@@ -81,10 +81,9 @@ import Settings from './scenes/Settings';
 import EditProfile from './scenes/EditProfile';
 
 import InvertedScrollComponent from './scenes/InvertedScrollComponent';
-// import GoogleLogin from './scenes/GoogleLogin';
 
+import ExerciseList from './scenes/ExerciseList';
 
-// import GoogleLogin from './scenes/GoogleLogin';
 
 class AApplication extends Component{
 
@@ -196,7 +195,9 @@ class AApplication extends Component{
           <Route name="SignUp" hideNavBar={true} component={SignUp} />
           <Route name="FBLogin" component={FBLogin} title="FBLogin" sidebar={sidebar} />
 
-          <Route name="Welcome" component={HomeContent} title="Home" sidebar={sidebar} />
+          <Route name="Welcome" component={HomeContent} title="Workout" sidebar={sidebar} />
+          <Route name="ExerciseList" component={ExerciseList} title="Exercise" sidebar={sidebar} />
+
 
           <Route name="Blogs" component={Blogs} title="Blogs" sidebar={sidebar} />
           <Route name="Blog" component={Blog} title="Blog" sidebar={sidebar} />
@@ -223,11 +224,11 @@ class AApplication extends Component{
 
           <Route name="InvertedScrollComponent" component={InvertedScrollComponent} title="InvertedScrollComponent" sidebar={sidebar} />
 
+
         </Router>
     );
   }
 }
-// <Route name="GoogleLogin" component={GoogleLogin} title="GoogleLogin" sidebar={sidebar} />
 
 const styles = StyleSheet.create({
   drawer: {

@@ -55,5 +55,3 @@ class FitnessApp extends Component {
 
 
 AppRegistry.registerComponent('FitnessApp', () => FitnessApp);
-
-

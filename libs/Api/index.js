@@ -133,7 +133,8 @@ class Api{
   /*
    * Get List of Categories
    */
-  getCategories(url='/categories'){
+  getCategories(url='/SubCategories'){
+    console.log('url:-- ',url);
     return this.request(url);
   }
   // TODO: Implement
